@@ -45,3 +45,8 @@ with open("../models/dowry_model.pkl", "wb") as f:
     pickle.dump(model, f)
 
 print("✅ Model trained and saved!")
+
+
+sample = X.iloc[0].values.reshape(1, -1)
+pred = model.predict(sample)
+print("Sample Prediction:", pred)
