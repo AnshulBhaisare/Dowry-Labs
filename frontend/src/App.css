@@ -1,47 +1,63 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #0f172a;
+  background: #0b0f19;
   color: white;
 }
 
-.container {
-  max-width: 400px;
-  margin: auto;
-  margin-top: 50px;
+.app {
+  text-align: center;
   padding: 20px;
+}
+
+.header h1 {
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  width: 80%;
+  height: 8px;
   background: #1e293b;
+  margin: 20px auto;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  border-radius: 10px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  margin: auto;
+  width: 400px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 
 input, select {
-  width: 100%;
+  display: block;
+  width: 90%;
+  margin: 10px auto;
   padding: 10px;
-  margin-bottom: 10px;
+  border-radius: 8px;
   border: none;
-  border-radius: 5px;
-  background: #334155;
+  background: #1e293b;
   color: white;
 }
 
 button {
-  width: 100%;
-  padding: 10px;
-  background: #7c3aed;
+  margin: 10px;
+  padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  background: #7c3aed;
   color: white;
   cursor: pointer;
 }
 
 button:hover {
   background: #6d28d9;
-}
-
-.result {
-  margin-top: 20px;
-  padding: 15px;
-  background: #1e293b;
-  border-radius: 10px;
 }

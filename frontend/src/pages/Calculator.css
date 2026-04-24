@@ -1,0 +1,112 @@
+.calculator {
+  padding: 50px;
+  background: var(--bg);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary);
+}
+
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mode-toggle button {
+  padding: 10px;
+}
+
+.active {
+  background: var(--accent);
+  color: white;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step.active {
+  background: var(--accent);
+  color: white;
+}
+
+.card {
+  max-width: 800px;
+  margin: auto;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+input, select {
+  padding: 10px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: white;
+  padding: 10px;
+}
+
+.secondary-btn {
+  background: #ddd;
+  padding: 10px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.result-card {
+  background: var(--card);
+  padding: 20px;
+  text-align: center;
+}
+
+.result-card.high {
+  border: 2px solid var(--accent);
+}
+
+.result-card.score {
+  background: var(--primary);
+  color: white;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 10px;
+}

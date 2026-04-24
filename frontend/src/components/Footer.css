@@ -1,0 +1,50 @@
+.footer {
+  background: #1e3a8a;
+  color: white;
+  padding: 40px 60px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+}
+
+.footer h3, .footer h4 {
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 14px;
+  margin: 6px 0;
+  opacity: 0.8;
+}
+
+.newsletter {
+  display: flex;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  padding: 8px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.newsletter button {
+  background: #f97316;
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #334155;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 12px;
+}
