@@ -4,9 +4,11 @@ import pickle
 import numpy as np
 import smtplib
 from email.mime.text import MIMEText
+import os
 
 app = FastAPI()
 
+# CORS setup
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -15,16 +17,31 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load model
-model = pickle.load(open("../models/dowry_model.pkl", "rb"))
+# -------------------- MODEL LOADING (FIXED) --------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, "..", "..", "models", "dowry_model.pkl")
+
+try:
+    model = pickle.load(open(model_path, "rb"))
+    print("✅ Model loaded successfully")
+except Exception as e:
+    print(f"❌ Error loading model: {e}")
+    model = None
+
+# -------------------- ROUTES --------------------
 
 @app.get("/")
 def home():
     return {"message": "Dowry Labs API is running 🚀"}
 
+
 @app.post("/predict")
 def predict(data: dict):
     try:
+        if model is None:
+            return {"error": "Model not loaded"}
+
         features = np.array([[
             data["age"],
             data["gender"],
@@ -67,37 +84,52 @@ def predict(data: dict):
     except Exception as e:
         return {"error": str(e)}
 
+
 @app.post("/feedback")
 def submit_feedback(data: dict):
     try:
         sender_email = "anshulbhaisare50@gmail.com"
         receiver_email = "shettu2.0dyp@gmail.com"
-        
-        # SECURITY NOTE: Replace 'YOUR_APP_PASSWORD' with a 16-character Gmail App Password
-        # Generate one here: https://myaccount.google.com/apppasswords
-        app_password = "gxrk zktn usfx cmye" 
+
+        # ✅ SAFE: use environment variable
+        app_password = os.getenv("EMAIL_PASSWORD")
 
         feedback_type = data.get("type", "General")
         comment = data.get("comment", "No comment")
         mode = data.get("mode", "unknown")
 
-        body = f"New Feedback Received from Dowry Labs\n\nMode: {mode}\nType: {feedback_type}\nComment: {comment}"
+        body = f"""
+New Feedback Received from Dowry Labs
+
+Mode: {mode}
+Type: {feedback_type}
+Comment: {comment}
+"""
+
         msg = MIMEText(body)
         msg['Subject'] = f"Dowry Labs Feedback - {feedback_type}"
         msg['From'] = sender_email
         msg['To'] = receiver_email
 
-        # If password is still the placeholder, we only log to console
-        if app_password == "gxrk zktn usfx cmye":
-            print("--- FEEDBACK SIMULATION ---")
+        # If no password set → log only
+        if not app_password:
+            print("--- FEEDBACK (NO EMAIL CONFIGURED) ---")
             print(body)
-            return {"status": "success", "message": "Feedback logged to console. Set App Password for email."}
+            return {
+                "status": "success",
+                "message": "Feedback logged (email not configured)"
+            }
 
+        # Send email
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
             server.login(sender_email, app_password)
             server.send_message(msg)
-        
-        return {"status": "success", "message": "Email sent successfully!"}
+
+        return {
+            "status": "success",
+            "message": "Email sent successfully!"
+        }
+
     except Exception as e:
         print(f"SMTP Error: {str(e)}")
         return {"error": str(e)}
