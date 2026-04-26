@@ -5,12 +5,24 @@
   padding: 15px 40px;
   background: #1e3a8a;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.logo:visited, .logo:active, .logo:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .logo h2 {
@@ -34,24 +46,119 @@
 }
 
 .nav-links a {
-  color: white;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-size: 14px;
+  font-weight: 500;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f97316;
+  transition: width 0.3s ease;
+  border-radius: 1px;
 }
 
 .nav-links a:hover {
   color: #f97316;
 }
 
-.cta-btn {
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.nav-active {
+  color: #f97316;
+}
+
+.nav-links a.nav-active::after {
+  width: 100%;
+}
+
+.nav-cta .cta-btn {
   background: #f97316;
   border: none;
-  padding: 8px 14px;
+  padding: 8px 16px;
   color: white;
   border-radius: 6px;
   cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
 }
 
-.cta-btn:hover {
+.nav-cta .cta-btn:hover {
   background: #ea580c;
+  transform: translateY(-1px);
+}
+
+/* HAMBURGER (hidden on desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger-open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1e3a8a;
+    padding: 20px 40px;
+    gap: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links-open {
+    display: flex;
+  }
+
+  .nav-cta {
+    display: none;
+  }
 }

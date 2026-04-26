@@ -1,0 +1,507 @@
+/* ======================== RESOURCES PAGE ======================== */
+.resources-page {
+  background: #f8fafc;
+}
+
+/* HERO */
+.resources-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #312e81 100%);
+  padding: 100px 60px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.resources-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.1), transparent 70%);
+  border-radius: 50%;
+}
+
+.resources-hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.resources-hero h1 {
+  font-size: 44px;
+  color: white;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.resources-hero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+/* SECTIONS */
+.resources-section {
+  padding: 70px 0;
+}
+
+.resources-section-alt {
+  background: #f1f5f9;
+}
+
+.resources-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section-badge-res {
+  display: inline-block;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.resources-section h2 {
+  font-size: 32px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.section-desc {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* HELPLINES */
+.helplines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.helpline-card {
+  background: white;
+  border-radius: 14px;
+  padding: 24px 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.helpline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.1);
+}
+
+.helpline-icon {
+  font-size: 32px;
+  min-width: 40px;
+}
+
+.helpline-card h3 {
+  font-size: 16px;
+  color: #1e3a8a;
+  margin: 0 0 4px;
+}
+
+.helpline-number {
+  font-size: 22px;
+  font-weight: 800;
+  color: #f97316;
+  margin: 0 0 6px;
+}
+
+.helpline-desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ORGANIZATIONS */
+.org-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.org-card {
+  background: white;
+  border-radius: 14px;
+  padding: 26px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.org-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.1);
+}
+
+.org-type {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.org-gov {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.org-ngo {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.org-card h3 {
+  font-size: 16px;
+  color: #1e3a8a;
+  margin: 0 0 8px;
+}
+
+.org-card p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+.org-link {
+  color: #f97316;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.org-link:hover {
+  color: #ea580c;
+}
+
+/* ARTICLES */
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.article-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  background: white;
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateX(8px);
+}
+
+.article-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: #f97316;
+  min-width: 50px;
+}
+
+.article-card h3 {
+  font-size: 17px;
+  color: #1e3a8a;
+  margin: 0 0 4px;
+}
+
+.article-source {
+  font-size: 12px;
+  color: #f97316;
+  font-weight: 600;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.article-card p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* CASE STUDIES */
+.case-studies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.case-study-card {
+  background: white;
+  border-radius: 14px;
+  padding: 28px 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #1e3a8a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.1);
+}
+
+.case-study-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-study-header h3 {
+  font-size: 18px;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.case-study-location {
+  font-size: 13px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.case-study-desc {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.case-study-outcome {
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.outcome-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.case-study-outcome p {
+  font-size: 14px;
+  color: #15803d;
+  margin: 4px 0 0;
+  line-height: 1.6;
+}
+
+/* CAMPAIGNS */
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.campaign-card {
+  background: white;
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campaign-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(30, 58, 138, 0.12);
+}
+
+.campaign-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.campaign-card h3 {
+  font-size: 18px;
+  color: #1e3a8a;
+  margin: 0 0 4px;
+}
+
+.campaign-org {
+  font-size: 12px;
+  color: #f97316;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px;
+}
+
+.campaign-card p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 14px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(30, 58, 138, 0.12);
+}
+
+.contact-icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.contact-card h3 {
+  font-size: 18px;
+  color: #1e3a8a;
+  margin: 0 0 8px;
+}
+
+.contact-card p {
+  font-size: 15px;
+  color: #475569;
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.contact-note {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* SCROLL OFFSET for sticky navbar hash navigation */
+.resources-section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* CTA */
+.resources-cta {
+  background: linear-gradient(135deg, #1e3a8a, #312e81);
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.resources-cta h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.resources-cta p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.resources-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.resources-cta .primary-btn {
+  background: #f97316;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.resources-cta .primary-btn:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+.resources-cta .secondary-btn {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 28px;
+  background: transparent;
+  color: white;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.resources-cta .secondary-btn:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .resources-hero {
+    padding: 60px 30px 50px;
+  }
+  .resources-hero h1 {
+    font-size: 30px;
+  }
+  .helplines-grid,
+  .org-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .campaigns-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

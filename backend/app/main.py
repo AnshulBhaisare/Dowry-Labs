@@ -2,6 +2,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 import pickle
 import numpy as np
+import smtplib
+from email.mime.text import MIMEText
 
 app = FastAPI()
 
@@ -63,4 +65,39 @@ def predict(data: dict):
         }
 
     except Exception as e:
+        return {"error": str(e)}
+
+@app.post("/feedback")
+def submit_feedback(data: dict):
+    try:
+        sender_email = "anshulbhaisare50@gmail.com"
+        receiver_email = "shettu2.0dyp@gmail.com"
+        
+        # SECURITY NOTE: Replace 'YOUR_APP_PASSWORD' with a 16-character Gmail App Password
+        # Generate one here: https://myaccount.google.com/apppasswords
+        app_password = "gxrk zktn usfx cmye" 
+
+        feedback_type = data.get("type", "General")
+        comment = data.get("comment", "No comment")
+        mode = data.get("mode", "unknown")
+
+        body = f"New Feedback Received from Dowry Labs\n\nMode: {mode}\nType: {feedback_type}\nComment: {comment}"
+        msg = MIMEText(body)
+        msg['Subject'] = f"Dowry Labs Feedback - {feedback_type}"
+        msg['From'] = sender_email
+        msg['To'] = receiver_email
+
+        # If password is still the placeholder, we only log to console
+        if app_password == "gxrk zktn usfx cmye":
+            print("--- FEEDBACK SIMULATION ---")
+            print(body)
+            return {"status": "success", "message": "Feedback logged to console. Set App Password for email."}
+
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+            server.login(sender_email, app_password)
+            server.send_message(msg)
+        
+        return {"status": "success", "message": "Email sent successfully!"}
+    except Exception as e:
+        print(f"SMTP Error: {str(e)}")
         return {"error": str(e)}

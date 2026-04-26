@@ -1,7 +1,15 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path, state = {}) => {
+    navigate(path, { state });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="home">
 
@@ -27,15 +35,19 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">Start Calculation</button>
-            <button className="secondary-btn">Know Your Rights</button>
+            <Link to="/calculator" className="primary-btn" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+              Start Calculation
+            </Link>
+            <Link to="/laws" className="secondary-btn" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+              Know Your Rights
+            </Link>
           </div>
         </div>
 
         <div className="hero-right">
           <img
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt="illustration"
+            src="/assets/hero_scales.png"
+            alt="Justice Shield"
           />
         </div>
 
@@ -55,34 +67,46 @@ function Home() {
 
         <div className="feature-grid">
 
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => handleNavigate("/calculator")}>
+            <span className="feature-icon">🧮</span>
             <h3>Calculator</h3>
             <p>Estimate dowry using AI model.</p>
+            <span className="feature-arrow">→</span>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => handleNavigate("/calculator", { mode: "groom" })}>
+            <span className="feature-icon">👨</span>
             <h3>For Groom</h3>
             <p>See demand trends based on profession.</p>
+            <span className="feature-arrow">→</span>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => handleNavigate("/calculator", { mode: "bride" })}>
+            <span className="feature-icon">👰</span>
             <h3>For Bride</h3>
             <p>Understand financial burden.</p>
+            <span className="feature-arrow">→</span>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => handleNavigate("/regional")}>
+            <span className="feature-icon">🗺️</span>
             <h3>Regional Data</h3>
             <p>Explore trends across states.</p>
+            <span className="feature-arrow">→</span>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => handleNavigate("/laws")}>
+            <span className="feature-icon">⚖️</span>
             <h3>Laws</h3>
             <p>Know your legal rights.</p>
+            <span className="feature-arrow">→</span>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card" onClick={() => handleNavigate("/resources")}>
+            <span className="feature-icon">📚</span>
             <h3>Resources</h3>
             <p>Helplines and support.</p>
+            <span className="feature-arrow">→</span>
           </div>
 
         </div>
@@ -91,33 +115,30 @@ function Home() {
       {/* CALCULATOR PREVIEW */}
       <section className="preview">
         <div className="preview-left">
-          <h2>Dowry Calculator</h2>
+          <h2>Advanced AI Analysis</h2>
           <p>
-            Our AI model analyzes multiple social and financial factors
-            to estimate dowry demand.
+            Our deep learning models process socio-economic markers to provide 
+            unbiased clarity on traditional demands and their impacts.
           </p>
 
           <ul>
-            <li>✔ AI Powered</li>
-            <li>✔ Real Data</li>
-            <li>✔ Educational Use</li>
+            <li>✔ Deep Feature Processing</li>
+            <li>✔ Regional Data Alignment</li>
+            <li>✔ Social Evil Awareness</li>
           </ul>
         </div>
 
         <div className="preview-right">
-          <div className="mock-card">
-            <p>Step 1 of 5</p>
-            <p>Personal Information</p>
-          </div>
+          <img src="/assets/preview_ai.png" alt="Regional Data Map" className="preview-image" />
         </div>
       </section>
 
-      {/* STORY SECTION */}
       <section className="story">
         <div className="story-left">
           <img
-            src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png"
-            alt="story"
+            src="/assets/story_book.png"
+            alt="The Story of Dowry"
+            className="story-image"
           />
         </div>
 
@@ -128,19 +149,42 @@ function Home() {
             impacted millions of lives. Understand its history and impact.
           </p>
 
-          <button className="secondary-btn">Read More</button>
+          <Link to="/learn" className="secondary-btn" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            Read More
+          </Link>
         </div>
       </section>
+
+      {/* EQUILIBRIUM SECTION */}
+      <section className="equilibrium">
+        <div className="equilibrium-container">
+          <div className="equilibrium-text">
+            <h2>Marriage Equilibrium</h2>
+            <p>
+              We believe in a future where marriage is built on mutual respect, 
+              shared dreams, and true equality. Our mission is to tip the scales 
+              away from regressive traditions and towards a balanced, fair society.
+            </p>
+            <div className="equilibrium-quote">
+              "Equality is not just a right, it's the foundation of a happy marriage."
+            </div>
+          </div>
+          <div className="equilibrium-visual">
+            <img src="/assets/equilibrium.png" alt="Marriage Equilibrium" />
+          </div>
+        </div>
+      </section>
+
 
       {/* STATES */}
       <section className="states">
         <h2>Dowry Insights by State</h2>
 
         <div className="state-grid">
-          <div className="state-card">Bihar</div>
-          <div className="state-card">Uttar Pradesh</div>
-          <div className="state-card">Punjab</div>
-          <div className="state-card">Rajasthan</div>
+          <div className="state-card" onClick={() => handleNavigate("/regional")}>Bihar</div>
+          <div className="state-card" onClick={() => handleNavigate("/regional")}>Uttar Pradesh</div>
+          <div className="state-card" onClick={() => handleNavigate("/regional")}>Punjab</div>
+          <div className="state-card" onClick={() => handleNavigate("/regional")}>Rajasthan</div>
         </div>
       </section>
 
@@ -149,10 +193,22 @@ function Home() {
         <h2>Need Help?</h2>
 
         <div className="help-grid">
-          <div>1091</div>
-          <div>181</div>
-          <div>100</div>
-          <div>1098</div>
+          <div className="help-card" onClick={() => handleNavigate("/resources")}>
+            <span className="help-number">1091</span>
+            <span className="help-label">Women Helpline</span>
+          </div>
+          <div className="help-card" onClick={() => handleNavigate("/resources")}>
+            <span className="help-number">181</span>
+            <span className="help-label">Women Helpline</span>
+          </div>
+          <div className="help-card" onClick={() => handleNavigate("/resources")}>
+            <span className="help-number">100</span>
+            <span className="help-label">Police Emergency</span>
+          </div>
+          <div className="help-card" onClick={() => handleNavigate("/resources")}>
+            <span className="help-number">1098</span>
+            <span className="help-label">Child Helpline</span>
+          </div>
         </div>
       </section>
 

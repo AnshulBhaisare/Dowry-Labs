@@ -1,0 +1,286 @@
+/* ======================== REGIONAL PAGE ======================== */
+.regional-page {
+  background: #f8fafc;
+}
+
+/* HERO */
+.regional-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 40%, #312e81 100%);
+  padding: 100px 60px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.regional-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(249, 115, 22, 0.08), transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(59, 130, 246, 0.08), transparent 60%);
+}
+
+.regional-hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.regional-hero h1 {
+  font-size: 44px;
+  color: white;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.regional-hero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+/* OVERVIEW */
+.regional-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: -40px auto 40px;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.overview-card {
+  background: white;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-4px);
+}
+
+.overview-card h3 {
+  font-size: 26px;
+  color: #f97316;
+  margin: 0 0 6px;
+}
+
+.overview-card p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* STATES */
+.regional-states {
+  padding: 60px 0;
+}
+
+.regional-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.regional-states h2 {
+  font-size: 32px;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.state-detail-card {
+  background: white;
+  border-radius: 14px;
+  padding: 26px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.state-detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(30, 58, 138, 0.12);
+}
+
+.state-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.state-card-header h3 {
+  font-size: 20px;
+  color: #1e3a8a;
+  margin: 0;
+}
+
+.risk-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.risk-very-high {
+  background: #fecaca;
+  color: #dc2626;
+}
+
+.risk-high {
+  background: #fed7aa;
+  color: #ea580c;
+}
+
+.risk-medium {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.risk-low {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.state-metrics {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.state-metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f97316;
+}
+
+.state-desc {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.state-factors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.factor-tag {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* CTA */
+.regional-cta {
+  background: linear-gradient(135deg, #1e3a8a, #312e81);
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.regional-cta h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.regional-cta p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.regional-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.regional-cta .primary-btn {
+  background: #f97316;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.regional-cta .primary-btn:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+.regional-cta .secondary-btn {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 28px;
+  background: transparent;
+  color: white;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.regional-cta .secondary-btn:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .regional-hero {
+    padding: 60px 30px 50px;
+  }
+  .regional-hero h1 {
+    font-size: 30px;
+  }
+  .regional-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .states-grid {
+    grid-template-columns: 1fr;
+  }
+}
