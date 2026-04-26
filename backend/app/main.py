@@ -24,9 +24,9 @@ model_path = os.path.join(BASE_DIR, "..", "models", "dowry_model.pkl")
 
 try:
     model = pickle.load(open(model_path, "rb"))
-    print("✅ Model loaded successfully")
+    print("Model loaded successfully")
 except Exception as e:
-    print(f"❌ Error loading model: {e}")
+    print(f"Error loading model: {e}")
     model = None
 
 # -------------------- ROUTES --------------------
