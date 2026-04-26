@@ -12,7 +12,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -20,7 +20,7 @@ app.add_middleware(
 # -------------------- MODEL LOADING (FIXED) --------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-model_path = os.path.join(BASE_DIR, "..", "..", "models", "dowry_model.pkl")
+model_path = os.path.join(BASE_DIR, "..", "models", "dowry_model.pkl")
 
 try:
     model = pickle.load(open(model_path, "rb"))
