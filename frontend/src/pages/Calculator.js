@@ -102,7 +102,7 @@ function Calculator() {
     try {
       setLoading(true);
       const apiUrl = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
-      await axios.post(`${apiUrl}/feedback`, {
+      await axios.post(`${apiUrl}/submit-review`, {
         type: feedbackType,
         comment: comment,
         mode: mode

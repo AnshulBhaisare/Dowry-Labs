@@ -85,7 +85,7 @@ def predict(data: dict):
         return {"error": str(e)}
 
 
-@app.post("/feedback")
+@app.post("/submit-review")
 def submit_feedback(data: dict):
     try:
         sender_email = "anshulbhaisare50@gmail.com"
