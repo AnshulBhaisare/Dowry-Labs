@@ -81,7 +81,8 @@ function Calculator() {
     try {
       setLoading(true);
       setError(null);
-      const res = await axios.post("http://127.0.0.1:8000/predict", payload);
+      const apiUrl = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+      const res = await axios.post(`${apiUrl}/predict`, payload);
       setResult(res.data);
       setLoading(false);
       setStep(4);
@@ -100,7 +101,8 @@ function Calculator() {
 
     try {
       setLoading(true);
-      await axios.post("http://127.0.0.1:8000/feedback", {
+      const apiUrl = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+      await axios.post(`${apiUrl}/feedback`, {
         type: feedbackType,
         comment: comment,
         mode: mode
