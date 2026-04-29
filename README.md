@@ -54,7 +54,7 @@ Dowry-Labs/
 ├── backend/
 │ ├── main.py # FastAPI server
 │ ├── model.pkl # Trained ML model
-│ ├── train_model.py # Training script
+│ ├── train_model.py # Model training script
 │ ├── dataset.csv # Generated dataset
 │ └── requirements.txt
 │
