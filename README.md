@@ -49,42 +49,44 @@ This project is built strictly for **educational awareness and social impact**.
 
 ## 🗂️ Project Structure
 
+```bash
 Dowry-Labs/
 │
 ├── backend/
-│ ├── main.py # FastAPI server
-│ ├── model.pkl # Trained ML model
-│ ├── train_model.py # Model training script
-│ ├── dataset.csv # Generated dataset
-│ └── requirements.txt
+│   ├── main.py              # FastAPI server
+│   ├── model.pkl            # Trained ML model
+│   ├── train_model.py       # Training script
+│   ├── dataset.csv          # Generated dataset
+│   └── requirements.txt
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ │ ├── Navbar.js
-│ │ │ ├── Footer.js
-│ │ │ └── ThemeToggle.js
-│ │ │
-│ │ ├── pages/
-│ │ │ ├── Home.js
-│ │ │ ├── Calculator.js
-│ │ │ ├── Learn.js
-│ │ │ ├── Laws.js
-│ │ │ ├── FAQ.js
-│ │ │ ├── Resources.js
-│ │ │ └── Regional.js
-│ │ │
-│ │ ├── styles/
-│ │ │ └── global.css
-│ │ │
-│ │ ├── App.js
-│ │ └── index.js
-│ │
-│ ├── package.json
-│ └── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.js
+│   │   │   ├── Footer.js
+│   │   │   └── ThemeToggle.js
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── Calculator.js
+│   │   │   ├── Learn.js
+│   │   │   ├── Laws.js
+│   │   │   ├── FAQ.js
+│   │   │   ├── Resources.js
+│   │   │   └── Regional.js
+│   │   │
+│   │   ├── styles/
+│   │   │   └── global.css
+│   │   │
+│   │   ├── App.js
+│   │   │
+│   │   └── index.js
+│   │
+│   ├── package.json
+│   └── public/
 │
 └── README.md
-
+```
 
 ---
 
